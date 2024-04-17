@@ -19,7 +19,6 @@ public class CredentialController {
 
     @Autowired
     private EncryptionService encryptionService;
-
     @PostMapping("/add")
     public String addCredentials(@RequestParam("credentialId") Integer id, @RequestParam("url") String url, @RequestParam("username") String username, @RequestParam("credential_Password") String password,
                                  RedirectAttributes redirectAttributes) {

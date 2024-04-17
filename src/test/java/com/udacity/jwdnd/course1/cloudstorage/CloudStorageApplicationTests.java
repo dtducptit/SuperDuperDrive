@@ -222,10 +222,10 @@ class CloudStorageApplicationTests {
 	@Test
 	@Order(5)
 	public void testSignupAndLogin() {
-		String username = "ginny";
-		String password = "12345";
-		String firstname = "Giny";
-		String lastname = "Nguyen";
+		String username = "duc";
+		String password = "123";
+		String firstname = "Trong";
+		String lastname = "Duc";
 
 		driver.get("http://localhost:" + this.port + "/signup");
 
@@ -261,7 +261,7 @@ class CloudStorageApplicationTests {
 	public void login() {
 		driver.get("http://localhost:" + this.port + "/login");
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.login("ginnynguyen", "1234");
+		loginPage.login("duc", "123");
 		assertEquals("http://localhost:" + this.port + "/", driver.getCurrentUrl());
 	}
 
@@ -292,10 +292,10 @@ class CloudStorageApplicationTests {
 		WebElement editButtonElement = driver.findElement(By.cssSelector("#userTable tbody tr:last-child td:nth-child(1) button"));
 		String noteDescriptionTestEdit = "This is a test note edited";
 
-		homePage.editNote(editButtonElement, "Notetttt", noteDescriptionTestEdit);
+		homePage.editNote(editButtonElement, "Noteeee", noteDescriptionTestEdit);
 
 		WebElement editElementTitle = driver.findElement(By.cssSelector("#userTable tbody tr:last-child td:nth-child(2)"));
-		assertEquals("Notetttt", editElementTitle.getAttribute("innerHTML"));
+		assertEquals("Noteeee", editElementTitle.getAttribute("innerHTML"));
 
 		WebElement editElementDescription = driver.findElement(By.cssSelector("#userTable tbody tr:last-child td:nth-child(3)"));
 		assertEquals(noteDescriptionTestEdit, editElementDescription.getAttribute("innerHTML"));
@@ -330,8 +330,8 @@ class CloudStorageApplicationTests {
 
 		HomePage homePage = new HomePage(driver);
 		String credentialUrlTest = "www.google.com";
-		String credentialUsernameTest = "ginnynguyen111";
-		String credentialPasswordTest = "12345678";
+		String credentialUsernameTest = "ducc";
+		String credentialPasswordTest = "123456";
 
 		homePage.addCredential(credentialUrlTest, credentialUsernameTest, credentialPasswordTest);
 
@@ -353,8 +353,8 @@ class CloudStorageApplicationTests {
 		HomePage homePage = new HomePage(driver);
 		WebElement editButtonElement = driver.findElement(By.cssSelector("#credentialTable tbody tr:last-child td:nth-child(1) button"));
 		String credentialUrlTestEdit = "www.facebook.com";
-		String credentialUsernameTestEdit = "ginnynguyen11167562";
-		String credentialPasswordTestEdit = "343245345345";
+		String credentialUsernameTestEdit = "duccc123";
+		String credentialPasswordTestEdit = "4142412";
 
 		homePage.editCredential(editButtonElement, credentialUrlTestEdit, credentialUsernameTestEdit, credentialPasswordTestEdit);
 
